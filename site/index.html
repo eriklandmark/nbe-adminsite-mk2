@@ -1,0 +1,32 @@
+<!doctype html> <html>
+    <head>
+        <meta charset="utf-8" />
+        <title>nBe Productions - Admin</title>
+        <link rel="icon" type="image/png" href="images/nbe_favicon.png">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/parts/errorbox.css">
+		<link rel="icon" type="image/png" href="images/nbe_favicon.png">
+    </head>
+    <body>
+        <!--<p>Hemsida för nBe Productions personal.</p>-->
+
+        <div class="loginBox">
+            <img src="images/nbe_logo.png" id="logo_img">
+            <h2>productions</h2>
+
+            <form id="login_form">
+                <input type="email" name="user" id="email_field" placeholder="Email..">
+                <input type="password" name="password" id="password_field" placeholder="Lösenord..">
+                <input type="button" value="LOGGA IN" id= "login_button" onclick="login()">
+            </form>
+        </div>
+
+        <div id="error_dimmer"><div id="error_box"><p id="error_text">Error</p><input type="button" id="error_button" value="OK" onclick="document.getElementById('error_dimmer').style.display = 'none'"></div></div>
+
+    </body>
+
+    <!--Scripts-->
+    <script src="js/index.js"></script>
+    <script src="js/ErrorMsg.js"></script>
+
+</html>

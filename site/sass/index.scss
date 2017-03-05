@@ -1,0 +1,241 @@
+@import 'compass';
+@import 'compass/css3';
+@import 'partials/variables';
+@import "partials/mixins";
+
+@media only screen and (min-device-width: $biggest_mobile_display_size + 1px) and (max-resolution: 2dppx)  {
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      position: fixed;
+      bottom: 10px;
+      left: 20px;
+      font-size: 1em;
+    }
+
+    .loginBox {
+      height: 350px;
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 15px;
+      background-color: #DFEDE1;
+      align-items: center;
+      justify-content: center;
+      font-family: Roboto, sans-serif;
+
+      #logo_img {
+        width: 60%;
+      }
+
+      h2 {
+        margin: 0;
+        padding: 0;
+        font-family: Mongolian Baiti, sans-serif;
+        letter-spacing: 3px;
+        font-size: 2.1em;
+      }
+
+      #login_form {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        #email_field {
+          border: none;
+          font-family: sans-serif;
+          padding: 8px;
+          font-size: 1em;
+        }
+
+        #password_field {
+          margin-top: 10px;
+          border: none;
+          font-family: sans-serif;
+          padding: 8px;
+          font-size: 1em;
+        }
+
+        #login_button {
+          border: none;
+          margin-top: 15px;
+          padding: 8px 20px 8px 20px;
+          font-size: 1em;
+          background-color: #9CB6D0;
+          color: black;
+          font-family: Roboto, sans-serif;
+          @include border-radius(30px);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width: $biggest_mobile_display_size) and (orientation: portrait) and (min-resolution: 2dppx) {
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      position: fixed;
+      bottom: 10px;
+      left: 20px;
+      font-size: 2em;
+    }
+
+    .loginBox {
+      height: 750px;
+      width: 750px;
+      display: flex;
+      flex-direction: column;
+      @include border-radius(55px);
+      background-color: #DFEDE1;
+      align-items: center;
+      justify-content: center;
+      font-family: Roboto, sans-serif;
+
+      #logo_img {
+        width: 70%;
+      }
+
+      h2 {
+        margin: 0;
+        padding: 0;
+        font-family: Mongolian Baiti, sans-serif;
+        letter-spacing: 5px;
+        font-size: 5rem;
+      }
+
+      #login_form {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        #email_field {
+          border: none;
+          font-family: sans-serif;
+          padding: 15px;
+          font-size: 2.5em;
+        }
+
+        #password_field {
+          margin-top: 20px;
+          border: none;
+          font-family: sans-serif;
+          padding: 15px;
+          font-size: 2.5em;
+        }
+
+        #login_button {
+          border: none;
+          margin-top: 40px;
+          padding: 8px 40px 8px 40px;
+          font-size: 2.5em;
+          background-color: #9CB6D0;
+          color: black;
+          font-family: Roboto, sans-serif;
+          @include border-radius(30px);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-height: $biggest_mobile_display_size) and (orientation: landscape) and (min-resolution: 2dppx) {
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      position: fixed;
+      bottom: 10px;
+      left: 20px;
+      font-size: 2em;
+    }
+
+    .loginBox {
+      height: 400px;
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      @include border-radius(35px);
+      background-color: #DFEDE1;
+      align-items: center;
+      justify-content: center;
+      font-family: Roboto, sans-serif;
+
+      #logo_img {
+        width: 60%;
+      }
+
+      h2 {
+        margin: 0;
+        padding: 0;
+        font-family: Mongolian Baiti, sans-serif;
+        letter-spacing: 5px;
+        font-size: 3rem;
+      }
+
+      #login_form {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        #email_field {
+          border: none;
+          font-family: sans-serif;
+          padding: 10px;
+          font-size: 1.2em;
+        }
+
+        #password_field {
+          margin-top: 15px;
+          border: none;
+          font-family: sans-serif;
+          padding: 10px;
+          font-size: 1.2em;
+        }
+
+        #login_button {
+          border: none;
+          margin-top: 20px;
+          padding: 8px 40px 8px 40px;
+          font-size: 1.5em;
+          background-color: #9CB6D0;
+          color: black;
+          font-family: Roboto, sans-serif;
+          @include border-radius(30px);
+        }
+      }
+    }
+  }
+}

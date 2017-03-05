@@ -1,0 +1,186 @@
+@import 'compass';
+@import 'compass/css3';
+@import '../partials/variables';
+@import "../partials/mixins";
+
+@media only screen and (min-device-width: $biggest_mobile_display_size + 1px) and (max-resolution: 2dppx)  {
+  #error_dimmer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    -webkit-animation-name: erro_box_fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.5s;
+    animation-name: erro_box_fadeIn;
+    animation-duration: 0.5s
+  }
+
+  #error_box {
+    position: fixed;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    min-width: 400px;
+    padding: 30px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include border-radius(30px);
+    -webkit-animation-name: erro_box_slideIn;
+    -webkit-animation-duration: 0.6s;
+    animation-name: erro_box_slideIn;
+    animation-duration: 0.6s
+  }
+
+  #error_text {
+    position: static;
+    margin: 0 0 20px;
+    padding: 0;
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-size: 1.4em;
+    color: black;
+  }
+
+  #error_button {
+    border: none;
+    font-size: 1.5em;
+    padding: 5px 30px 5px 30px;
+    background-color: #9CB6D0;
+    @include border-radius(30px);
+  }
+}
+
+@media only screen and (max-device-width: $biggest_mobile_display_size) and (orientation: portrait) and (min-resolution: 2dppx)  {
+  #error_dimmer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    -webkit-animation-name: erro_box_fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.5s;
+    animation-name: erro_box_fadeIn;
+    animation-duration: 0.5s
+  }
+
+  #error_box {
+    position: fixed;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    min-width: 600px;
+    padding: 30px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include border-radius(30px);
+    -webkit-animation-name: erro_box_slideIn;
+    -webkit-animation-duration: 0.6s;
+    animation-name: erro_box_slideIn;
+    animation-duration: 0.6s
+  }
+
+  #error_text {
+    position: static;
+    margin: 0 0 20px;
+    padding: 0;
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-size: 2.4em;
+    color: black;
+  }
+
+  #error_button {
+    border: none;
+    font-size: 2.5em;
+    padding: 8px 35px 8px 35px;
+    background-color: #9CB6D0;
+    @include border-radius(30px);
+  }
+}
+
+@media only screen and (max-device-height: $biggest_mobile_display_size) and (orientation: landscape) and (min-resolution: 2dppx)  {
+  #error_dimmer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    -webkit-animation-name: erro_box_fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.5s;
+    animation-name: erro_box_fadeIn;
+    animation-duration: 0.5s
+  }
+
+  #error_box {
+    position: fixed;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    min-width: 600px;
+    padding: 30px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include border-radius(30px);
+    -webkit-animation-name: erro_box_slideIn;
+    -webkit-animation-duration: 0.6s;
+    animation-name: erro_box_slideIn;
+    animation-duration: 0.6s
+  }
+
+  #error_text {
+    position: static;
+    margin: 0 0 20px;
+    padding: 0;
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-size: 2.4em;
+    color: black;
+  }
+
+  #error_button {
+    border: none;
+    font-size: 2.5em;
+    padding: 8px 35px 8px 35px;
+    background-color: #9CB6D0;
+    @include border-radius(30px);
+  }
+}
+
+@-webkit-keyframes erro_box_slideIn {
+  from {top: -300px; opacity: 0}
+  to {top: 50px; opacity: 1}
+}
+
+@keyframes erro_box_slideIn {
+  from {top: -300px; opacity: 0}
+  to {top: 50px; opacity: 1}
+}
+
+@-webkit-keyframes erro_box_fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes erro_box_fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}

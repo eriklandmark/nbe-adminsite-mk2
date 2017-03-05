@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>nBe Productions</title>
+
+        <link rel="stylesheet" type="text/css" href="css/parts/errorbox.css">
+        <link rel="stylesheet" type="text/css" href="css/main_page.css">
+		<link rel="icon" type="image/png" href="images/nbe_favicon.png">
+    </head>
+    <body>
+        <div id="error_dimmer"><div id="error_box"><p id="error_text">Error</p><input type="button" id="error_button" value="OK" onclick="document.getElementById('error_dimmer').style.display = 'none'"></div></div>
+        
+        <div id="mobile_menu">
+            <img src="icons/menu_icon.svg" alt="" id="mobile_menu_icon" onclick="document.getElementById('nav').style.display = 'flex'; document.getElementById('menu_dimmer').style.display = 'flex'">
+            <div><h1 id="mobile_nav_title">Info</h1></div>
+        </div>
+
+        <div id="menu_dimmer" onclick="this.style.display = 'none'; document.getElementById('nav').style.display = 'none';"></div>
+        
+        <nav id="nav">
+            <div id="log_out_div" onclick="window.open('index.html','_self')">
+                <p>LOGGA UT</p>
+            </div>
+
+            <p id="user_name">Daniel & David</p>
+
+            <div id="nav_tabs">
+                <div id="nav_logo_div">
+                    <img src="images/nbe_logo_white.png" alt="nBe Productions Logo">
+                </div>
+                <div  class="nav_item" onclick="openPage(event, 'area_statistik', 'nav_item', 'area')">
+                    <img src="icons/statistic_icon_white.svg" class="nav_picture">
+                    <p>Statistik</p>
+                </div>
+                <div class="nav_item" onclick="openPage(event, 'area_files', 'nav_item', 'area')">
+                    <img src="icons/files_icon_white.svg" class="nav_picture">
+                    <p>Filer</p>
+                </div>
+                <div class="nav_item" onclick="openPage(event, 'area_editor', 'nav_item', 'area')">
+                    <img src="icons/chatt_icon_white.svg" class="nav_picture">
+                    <p>Editor</p>
+                </div>
+                <div class="nav_item" onclick="openPage(event, 'area_user', 'nav_item', 'area')">
+                    <img src="icons/user_icon_white.svg" class="nav_picture">
+                    <p>Användar Inst.</p>
+                </div>
+            </div>
+        </nav>
+        <div id="nav_content">
+            <div id="area_info" class="area">
+                <div id="area_content_info" class="area_content">
+                    <h2 class="area_content_title">Information</h2>
+                    <p>Hej bäste anställd på nBe eller lärare! Här finns alla verktyg som man behöver som anställd / lärare.
+                        <br>Här kan du kolla in den senaste statistiken för både youtube-kanalen och hemsidan.
+                    <br> Du kan även ändra i den publika hemsidan på 'Editor' sidan. Du har också tillgång till all information och filer under 'Filer' sidan.</p>
+                </div>
+            </div>
+            <div id="area_statistik" class="area">
+                <div class="area_tabs">
+                    <div class="area_tabs_title">
+                        <h2>Statistik</h2>
+                    </div>
+
+                    <div class="area_tab_item_statistik active_button" onclick="openPage(event, 'area_youtube', 'area_tab_item_statistik', 'area_content_statistik')">
+                        <img src="icons/youtube_icon_white.svg">
+                        <p>Youtube</p>
+                    </div>
+
+                    <div class="area_tab_item_statistik" onclick="openPage(event, 'area_hemsida', 'area_tab_item_statistik', 'area_content_statistik')">
+                        <img src="icons/website_icon_white.svg">
+                        <p>Hemsidan</p>
+                    </div>
+                </div>
+
+                <div class="area_content">
+                    <div id="area_youtube" class="area_content_statistik">
+                        <h2 class="area_content_title">Youtube</h2>
+                        <h3>Graf över 'Sessions'</h3>
+                        <img src="images/sessions.png">
+                        <h3>Graf över 'Users'</h3>
+                        <img src="images/users.PNG">
+                    </div>
+                    <div id="area_hemsida" class="area_content_statistik">
+                        <h2 class="area_content_title">nbeproductions.com - Hemsidan</h2>
+                        <h3>Graf över 'Sessions'</h3>
+                        <img src="images/sessions.png">
+                        <h3>Graf över 'Users'</h3>
+                        <img src="images/users.PNG">
+                    </div>
+                </div>
+
+            </div>
+            <div id="area_files" class="area">
+                <div class="area_tabs">
+                    <div class="area_tabs_title">
+                        <h2>Files</h2>
+                    </div>
+
+                    <div class="area_tab_item_files active_button" onclick="openPage(event, 'area_arbetsbeskrivning', 'area_tab_item_files', 'area_content_files')">
+                        <img src="icons/user_db_icon_white.svg">
+                        <p>Arbets<wbr>beskrivning</p>
+                    </div>
+
+                    <div class="area_tab_item_files" onclick="openPage(event, 'area_stab', 'area_tab_item_files', 'area_content_files')">
+                        <img src="icons/stab_icon_white.svg">
+                        <p>Stab</p>
+                    </div>
+
+                    <!--<div class="area_tab_item_files" onclick="openPage(event, 'area_dokument', 'area_tab_item_files', 'area_content_files')">
+                        <img src="icons/website_icon_white.svg">
+                        <p>Dokument</p>
+                    </div>
+
+                    <div class="area_tab_item_files" onclick="openPage(event, 'area_bilder', 'area_tab_item_files', 'area_content_files')">
+                        <img src="icons/website_icon_white.svg">
+                        <p>Bilder</p>
+                    </div>
+
+                    <div class="area_tab_item_files" onclick="openPage(event, 'area_videos', 'area_tab_item_files', 'area_content_files')">
+                        <img src="icons/website_icon_white.svg">
+                        <p>Videos</p>
+                    </div>-->
+                </div>
+
+                <div class="area_content">
+                    <div id="area_arbetsbeskrivning" class="area_content_files">
+                        <h2>Arbetsbeskrivning</h2>
+                        <h3>Regissör</h3>
+                        <ul>
+                            <li>Tar hand om det kreativa.</li>
+                            <li>Ser till att filmen håller sig till handlingen.</li>
+                            <li>Hjälper till att skriva manus.</li>
+                        </ul>
+                        <h3>Producent</h3>
+                        <ul>
+                            <li>Ser till att filmen blir av.</li>
+                            <li>Hjälper till med logistiken. (T.ex tider, platser)</li>
+                        </ul>
+                        <h3>Ljudansvarig</h3>
+                        <ul>
+                            <li>Tar med all ljudutrustning till inspleningen.</li>
+                            <li>Spelar oftast in ljudet också.</li>
+                        </ul>
+                        <h3>Kameraman</h3>
+                        <ul>
+                            <li>Sköter kameran under inspelningen.</li>
+                            <li>Jobbar mycket med regissören.</li>
+                        </ul>
+                        <h3>Webbutvecklare</h3>
+                        <ul>
+                            <li>Jobbar med hemsidan.</li>
+                            <li>Ser till att all information som står på hemsidan är korrekt.</li>
+                        </ul>
+                        <h3>Musikansvarig</h3>
+                        <ul>
+                            <li>Gör all musik till filmerna.</li>
+                        </ul>
+                    </div>
+
+                    <div id="area_stab" class="area_content_files">
+                        <h2>Stab</h2>
+                        <table id="stab_table">
+                            <tBody>
+                            <tr>
+                                <td class="stab_head_cell"><p><b>Namn</b></p></td>
+                                <td class="stab_head_cell"><p><b>Telefon nr.</b></p></td>
+                                <td class="stab_head_cell"><p><b>Mail</b></p></td>
+                                <td class="stab_head_cell"><p><b>Arbetsuppgift</b></p></td>
+                            </tr>
+                            </tBody>
+                            <tr>
+                                <td class="stab_cell"><p>Erik Landmark</p></td>
+                                <td class="stab_cell"><p>XXXX-XXXXXXXX</p></td>
+                                <td class="stab_cell"><p>erik.landmark@itggot.se</p></td>
+                                <td class="stab_cell"><p>Redigering</p></td>
+                            </tr>
+                            <tr>
+                                <td class="stab_cell"><p>Henrik Thölin</p></td>
+                                <td class="stab_cell"><p>XXXX-XXXXXXXX</p></td>
+                                <td class="stab_cell"><p>henrik.tholin@itggot.se</p></td>
+                                <td class="stab_cell"><p>Producent</p></td>
+                            </tr>
+                            <tr>
+                                <td class="stab_cell"><p>Hugo Drakeskär</p></td>
+                                <td class="stab_cell"><p>XXXX-XXXXXXXX</p></td>
+                                <td class="stab_cell"><p>hugo.drakeskar@itggot.se</p></td>
+                                <td class="stab_cell"><p>Regissör, Skådis</p></td>
+                            </tr>
+                            <tr>
+                                <td class="stab_cell"><p>Rikard Sjöstedt</p></td>
+                                <td class="stab_cell"><p>XXXX-XXXXXXXX</p></td>
+                                <td class="stab_cell"><p>rikard.sjostedt@itggot.se</p></td>
+                                <td class="stab_cell"><p>Kameraman, Hemsida utvecklare</p></td>
+                            </tr>
+                            <tr>
+                                <td class="stab_cell"><p>Elias Carlsson</p></td>
+                                <td class="stab_cell"><p>XXXX-XXXXXXXX</p></td>
+                                <td class="stab_cell"><p>elias.carlson@itggot.se</p></td>
+                                <td class="stab_cell"><p>Grafisk Designer</p></td>
+                            </tr>
+                            <tr>
+                                <td class="stab_cell"><p>Filip Gustavsson</p></td>
+                                <td class="stab_cell"><p>XXXX-XXXXXXXX</p></td>
+                                <td class="stab_cell"><p>filip.gustavsson@itggot.se</p></td>
+                                <td class="stab_cell"><p>Möjlig kamerautlånare</p></td>
+                            </tr>
+                            <tr>
+                                <td class="stab_cell"><p>Samuel Hedén</p></td>
+                                <td class="stab_cell"><p>XXXX-XXXXXXXX</p></td>
+                                <td class="stab_cell"><p>samuel.heden@itggot.se</p></td>
+                                <td class="stab_cell"><p>Musik</p></td>
+                            </tr>
+                            <tr>
+                                <td class="stab_cell"><p>Lukas Lönnbro</p></td>
+                                <td class="stab_cell"><p>XXXX-XXXXXXXX</p></td>
+                                <td class="stab_cell"><p>lukas.lonnbro@itggot.se</p></td>
+                                <td class="stab_cell"><p>Musik, Assistent</p></td>
+                            </tr>
+                            <tr>
+                                <td class="stab_cell"><p>Gösta Larsson</p></td>
+                                <td class="stab_cell"><p>XXXX-XXXXXXXX</p></td>
+                                <td class="stab_cell"><p>gosta.larsson@itggot.se</p></td>
+                                <td class="stab_cell"><p>Manus? / Skådis</p></td>
+                            </tr>
+                            <tr>
+                                <td class="stab_cell"><p>Petter Blomkvist</p></td>
+                                <td class="stab_cell"><p>XXXX-XXXXXXXX</p></td>
+                                <td class="stab_cell"><p>petter.blomkvist@itggot.se</p></td>
+                                <td class="stab_cell"><p>Hemsida utvecklare</p></td>
+                            </tr>
+                            <tr>
+                                <td class="stab_cell"><p>Melvin Sörum</p></td>
+                                <td class="stab_cell"><p>XXXX-XXXXXXXX</p></td>
+                                <td class="stab_cell"><p>melvin.sorum@itggot.se</p></td>
+                                <td class="stab_cell"><p>Ljudansvarig</p></td>
+                            </tr>
+                            <tr>
+                                <td class="stab_cell"><p>Lukas Gartman</p></td>
+                                <td class="stab_cell"><p>XXXX-XXXXXXXX</p></td>
+                                <td class="stab_cell"><p>lukas.gartman@itggot.se</p></td>
+                                <td class="stab_cell"><p>Hemsida utvecklare</p></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!--<div id="area_dokument" class="area_content_files">
+
+                    </div>
+
+                    <div id="area_bilder" class="area_content_files">
+
+                    </div>
+
+                    <div id="area_videos" class="area_content_files">
+
+                    </div>-->
+                </div>
+            </div>
+            <div id="area_editor" class="area">
+                <div class="area_tabs">
+                    <div class="area_tabs_title">
+                        <h2>Editor</h2>
+                    </div>
+
+                    <div class="area_tab_item_editor" onclick="openPage(event, 'area_omoss', 'area_tab_item_editor', 'area_content_editor')">
+                        <p>Om Oss</p>
+                    </div>
+
+                    <div class="area_tab_item_editor" onclick="openPage(event, 'area_historia', 'area_tab_item_editor', 'area_content_editor')">
+                        <p>Historia</p>
+                    </div>
+
+                    <div class="area_tab_item_editor" onclick="openPage(event, 'area_projekt', 'area_tab_item_editor', 'area_content_editor')">
+                        <p>Projekt</p>
+                    </div>
+
+                    <div class="area_tab_item_editor" onclick="openPage(event, 'area_kontakt', 'area_tab_item_editor', 'area_content_editor')">
+                        <p>Kontakt</p>
+                    </div>
+                </div>
+
+                <div class="area_content">
+                    <div id="area_omoss" class="area_content_editor">
+                        <h1>Om Oss</h1>
+                        <p>Här kan du redigera sidan 'Om Oss'</p>
+                        <div class="editor_action_bar">
+                            <input type="button" value="SPARA" onclick="msg('Sparade sidan Om Oss!')">
+                        </div>
+
+                        <textarea name="textarea" rows="20">Laddar text...</textarea>
+                    </div>
+
+                    <div id="area_historia" class="area_content_editor">
+                        <h1>Historia</h1>
+                        <p>Här kan du redigera sidan 'Historia'</p>
+                        <div class="editor_action_bar">
+                            <input type="button" value="SPARA" onclick="msg('Sparade sidan Historia!');">
+                        </div>
+
+                        <textarea name="textarea" rows="20">Laddar text...</textarea>
+                    </div>
+
+                    <div id="area_projekt" class="area_content_editor">
+                        <h1>Projekt</h1>
+                        <p>Här kan du redigera sidan 'Projekt'</p>
+                        <div class="editor_action_bar">
+                            <input type="button" value="SPARA" onclick="msg('Sparade sidan Projekt!');">
+                        </div>
+
+                        <textarea name="textarea" rows="20">Laddar text...</textarea>
+                    </div>
+
+                    <div id="area_kontakt" class="area_content_editor">
+                        <h1>Kontakt</h1>
+                        <p>Här kan du redigera sidan 'Kontakt'</p>
+                        <div class="editor_action_bar">
+                            <input type="button" value="SPARA" onclick="msg('Sparade sidan Kontakt!');">
+                        </div>
+
+                        <textarea name="textarea" rows="20">Laddar text...</textarea>
+                    </div>
+                </div>
+            </div>
+            <div id="area_user" class="area">
+                <h2>Ändra Dina Uppgifter</h2>
+
+                <form>
+                    <p>Lösenord:</p><br>
+                    <input type="password" placeholder="Nytt lösenord.."/> <br>
+                    <input type="password" placeholder="Bekräfta nytt lösenord.."/><br>
+                    <input type="button" value="Spara" onclick="msg('Ditt lösenord har ändrats!')"/>
+                </form>
+            </div>
+        </div>
+    </body>
+    <!-- Scripts -->
+    <script src="js/ErrorMsg.js"></script>
+    <script src="js/main_page.js"></script>
+</html>
