@@ -1,0 +1,102 @@
+# Used to run your rake tasks (rake db:seed & rake test:[acceptance|models|routes])
+
+# Use bundler to load gems
+require 'bundler'
+
+# Load gems from Gemfile
+Bundler.require
+
+
+# Rake tasks for database management
+namespace :db do
+
+  # Task for populating the database from db/seed.rb
+  # rake db:seed
+  task :seed do
+    # Load all models etc
+    require_relative 'config/environment'
+
+    # Add seed data to database
+    require './db/seed'
+    Seeder.seed!
+  end
+
+  task :migrate do
+
+    require_relative 'config/environment'
+
+    DataMapper.auto_migrate!
+    p "Auto-migrated!"
+  end
+
+  task :create do
+
+    require_relative 'config/environment'
+
+    require './db/create'
+    CreateUser.create
+  end
+
+  task :setlevel do
+
+    require_relative 'config/environment'
+
+    require './db/setlevel'
+    SetLevel.set
+  end
+
+  task :list do
+
+    require_relative 'config/environment'
+
+    require './db/list'
+    List.list
+  end
+
+  task :delete do
+
+    require_relative 'config/environment'
+
+    require './db/delete'
+    DeleteUser.delete
+  end
+
+  task :changepassword do
+
+    require_relative 'config/environment'
+
+    require './db/changepassword'
+    ChangePassword.change
+  end
+end
+
+# Rake tasks for running tests
+namespace :test do
+
+  begin
+  # Load rspec module for creating rspec rake tasks
+  require 'rspec/core/rake_task'
+
+  # Acceptance tests (simulating or running a browser to inspect output)
+  # rake test:acceptance
+  RSpec::Core::RakeTask.new(:acceptance) do |t|
+    t.pattern = ['test/acceptance/*_spec.rb']
+  end
+
+  # Model tests (making sure models behave as expected)
+  # rake test:models
+  RSpec::Core::RakeTask.new(:models) do |t|
+    t.pattern = ['test/models/*_test.rb']
+  end
+
+  # Route tests (making sure routes respond as expected)
+  # rake test:routes
+  RSpec::Core::RakeTask.new(:routes) do |t|
+    t.pattern = ['test/routes/*_test.rb']
+  end
+
+  rescue LoadError #if rspec is not available (i.e environment is not test)
+  end
+
+
+end
