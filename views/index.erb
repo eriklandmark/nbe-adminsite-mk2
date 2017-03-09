@@ -14,8 +14,8 @@
             <img src="images/nbe_logo.png" id="logo_img">
             <h2>productions</h2>
 
-            <form id="login_form">
-                <input type="email" name="user" id="email_field" placeholder="Email..">
+            <form id="login_form" action="/login" method="post">
+                <input type="email" name="email" id="email_field" placeholder="Email..">
                 <input type="password" name="password" id="password_field" placeholder="Lösenord..">
                 <input type="button" value="LOGGA IN" id= "login_button" onclick="login()">
             </form>
@@ -28,5 +28,6 @@
     <!--Scripts-->
     <script src="js/index.js"></script>
     <script src="js/ErrorMsg.js"></script>
+    <script src="js/AjaxCall.js"></script>
 
 </html>

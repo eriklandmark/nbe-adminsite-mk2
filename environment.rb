@@ -1,11 +1,5 @@
-=begin
 # Load all models
 Dir["./models/*.rb"].each {|model| require model}
-
-#Load all helpers
-Dir["./helpers/*.rb"].each {|helper| require helper}
-=end
-
 
 # Used during local development (on your own machine)
 configure :development do
@@ -14,13 +8,8 @@ configure :development do
   puts "* DEVELOPMENT ENV *"
   puts "*******************"
 
-  # Enable logging to console
-  #DataMapper::Logger.new($stdout, :debug)
-
   # Use SQLite
-=begin
-  DataMapper.setup(:default, "sqlite:///#{Dir.pwd}/db/app-dev.sqlite")
-=end
+  DataMapper.setup(:default, "sqlite:///#{Dir.pwd}/database/app-dev.sqlite")
 
   # Enable pretty printing of Slim-generated HTML (for debugging)
   Slim::Engine.set_options pretty: true, sort_attrs: false

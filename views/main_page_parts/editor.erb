@@ -1,0 +1,65 @@
+<div id="area_editor" class="area">
+    <div class="area_tabs">
+        <div class="area_tabs_title">
+            <h2>Editor</h2>
+        </div>
+
+        <div class="area_tab_item_editor" onclick="openPage(event, 'area_omoss', 'area_tab_item_editor', 'area_content_editor')">
+            <p>Om Oss</p>
+        </div>
+
+        <div class="area_tab_item_editor" onclick="openPage(event, 'area_historia', 'area_tab_item_editor', 'area_content_editor')">
+            <p>Historia</p>
+        </div>
+
+        <div class="area_tab_item_editor" onclick="openPage(event, 'area_projekt', 'area_tab_item_editor', 'area_content_editor')">
+            <p>Projekt</p>
+        </div>
+
+        <div class="area_tab_item_editor" onclick="openPage(event, 'area_kontakt', 'area_tab_item_editor', 'area_content_editor')">
+            <p>Kontakt</p>
+        </div>
+    </div>
+
+    <div class="area_content">
+        <div id="area_omoss" class="area_content_editor">
+            <h1>Om Oss</h1>
+            <p>Här kan du redigera sidan 'Om Oss'</p>
+            <div class="editor_action_bar">
+                <input type="button" value="SPARA" onclick="msg('Sparade sidan Om Oss!')">
+            </div>
+
+            <textarea name="textarea" rows="20">Laddar text...</textarea>
+        </div>
+
+        <div id="area_historia" class="area_content_editor">
+            <h1>Historia</h1>
+            <p>Här kan du redigera sidan 'Historia'</p>
+            <div class="editor_action_bar">
+                <input type="button" value="SPARA" onclick="msg('Sparade sidan Historia!');">
+            </div>
+
+            <textarea name="textarea" rows="20">Laddar text...</textarea>
+        </div>
+
+        <div id="area_projekt" class="area_content_editor">
+            <h1>Projekt</h1>
+            <p>Här kan du redigera sidan 'Projekt'</p>
+            <div class="editor_action_bar">
+                <input type="button" value="SPARA" onclick="msg('Sparade sidan Projekt!');">
+            </div>
+
+            <textarea name="textarea" rows="20">Laddar text...</textarea>
+        </div>
+
+        <div id="area_kontakt" class="area_content_editor">
+            <h1>Kontakt</h1>
+            <p>Här kan du redigera sidan 'Kontakt'</p>
+            <div class="editor_action_bar">
+                <input type="button" value="SPARA" onclick="msg('Sparade sidan Kontakt!');">
+            </div>
+
+            <textarea name="textarea" rows="20">Laddar text...</textarea>
+        </div>
+    </div>
+</div>
