@@ -4,7 +4,7 @@
             <h2>Editor</h2>
         </div>
 
-        <div class="area_tab_item_editor" onclick="openPage(event, 'area_omoss', 'area_tab_item_editor', 'area_content_editor')">
+        <div class="area_tab_item_editor active_button" onclick="openPage(event, 'area_omoss', 'area_tab_item_editor', 'area_content_editor')">
             <p>Om Oss</p>
         </div>
 
@@ -26,40 +26,44 @@
             <h1>Om Oss</h1>
             <p>Här kan du redigera sidan 'Om Oss'</p>
             <div class="editor_action_bar">
-                <input type="button" value="SPARA" onclick="msg('Sparade sidan Om Oss!')">
+                <input type="button" value="SPARA" onclick="saveSiteInfo('about', 'ta_about')">
+                <input type="button" value="UPPDATERA" onclick="updateTextEditor('about', 'ta_about')">
             </div>
 
-            <textarea name="textarea" rows="20">Laddar text...</textarea>
+            <textarea name="textarea" id="ta_about" rows="20"><%=get_site_text("about")%></textarea>
         </div>
 
         <div id="area_historia" class="area_content_editor">
             <h1>Historia</h1>
             <p>Här kan du redigera sidan 'Historia'</p>
             <div class="editor_action_bar">
-                <input type="button" value="SPARA" onclick="msg('Sparade sidan Historia!');">
+                <input type="button" value="SPARA" onclick="saveSiteInfo('history', 'ta_history')">
+                <input type="button" value="UPPDATERA" onclick="updateTextEditor('history', 'ta_history')">
             </div>
 
-            <textarea name="textarea" rows="20">Laddar text...</textarea>
+            <textarea name="textarea" id="ta_history" rows="20"><%=get_site_text("history")%></textarea>
         </div>
 
         <div id="area_projekt" class="area_content_editor">
             <h1>Projekt</h1>
             <p>Här kan du redigera sidan 'Projekt'</p>
             <div class="editor_action_bar">
-                <input type="button" value="SPARA" onclick="msg('Sparade sidan Projekt!');">
+                <input type="button" value="SPARA" onclick="saveSiteInfo('project', 'ta_project')">
+                <input type="button" value="UPPDATERA" onclick="updateTextEditor('project', 'ta_project')">
             </div>
 
-            <textarea name="textarea" rows="20">Laddar text...</textarea>
+            <textarea name="textarea" id="ta_project" rows="20"><%=get_site_text("project")%></textarea>
         </div>
 
         <div id="area_kontakt" class="area_content_editor">
             <h1>Kontakt</h1>
             <p>Här kan du redigera sidan 'Kontakt'</p>
             <div class="editor_action_bar">
-                <input type="button" value="SPARA" onclick="msg('Sparade sidan Kontakt!');">
+                <input type="button" value="SPARA" onclick="saveSiteInfo('contact', 'ta_contact')">
+                <input type="button" value="UPPDATERA" onclick="updateTextEditor('contact', 'ta_contact')">
             </div>
 
-            <textarea name="textarea" rows="20">Laddar text...</textarea>
+            <textarea name="textarea" id="ta_contact" rows="20"><%=get_site_text("contact")%></textarea>
         </div>
     </div>
 </div>

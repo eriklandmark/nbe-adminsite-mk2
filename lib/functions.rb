@@ -60,3 +60,34 @@ def get_personal_key(user:)
     u.personal_key
   end
 end
+
+def htmlToText(text)
+  text.gsub("<br>", "\n")
+  text.gsub("<script", "")
+  text.gsub("</script>", "")
+end
+
+def get_site_text(id)
+  site_info = SiteText.first(:name_id => id)
+  if site_info != nil
+    htmlToText(site_info.text)
+  else
+    p "Wrong site id."
+  end
+end
+
+def get_user_names
+  usernames = Array.new
+  Users.all().each do |user|
+    usernames << user.email
+  end
+  usernames
+end
+
+def get_user_levels
+  levels = Array.new
+  Users.all().each do |user|
+    levels << user.clearence_level
+  end
+  levels
+end

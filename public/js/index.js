@@ -6,7 +6,7 @@ function login() {
     } else {
         newIndexServerCall("/check-user", new FormData(document.getElementById("login_form")), function (response) {
            if (response == "false") {
-               error("Lösenord eller email är fel!");
+               error("Lösenord eller email är fel! Försök igen.");
            } else {
                document.getElementById("login_form").submit();
            }

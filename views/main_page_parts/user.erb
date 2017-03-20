@@ -2,9 +2,42 @@
     <h2>Ändra Dina Uppgifter</h2>
 
     <form>
-        <p>Lösenord:</p><br>
-        <input type="password" placeholder="Nytt lösenord.."/> <br>
-        <input type="password" placeholder="Bekräfta nytt lösenord.."/><br>
-        <input type="button" value="Spara" onclick="msg('Ditt lösenord har ändrats!')"/>
+        <p>Skriv in nytt lösenord:</p><br>
+        <input type="password" placeholder="Nytt lösenord"/> <br>
+        <input type="password" placeholder="Bekräfta nytt lösenord"/><br>
+        <input type="button" value="SPARA" onclick="msg('Ditt lösenord har ändrats!')"/>
     </form>
+
+    <div id="divider"></div>
+
+    <% if session[:level] == 2 %>
+        <h2 class="contentTitle">Användarhanteraren</h2>
+
+        <h3 class="under_title">Lägg till användare</h3>
+        <input type="button" id="add_new_user_button" onclick="openAddUserForm()">
+
+        <div id="form_dimmer"></div>
+
+        <div id="add_user_form">
+            <h2>Lägg till ett nytt konto.</h2>
+            <input type="email" name="email" id="add_user_email_field" placeholder="Email">
+            <input type="password" name="password" id="add_user_pass_field" placeholder="Lösenord">
+            <div>
+                <input type="button" value="AVBRYT" id="add_user_button" class="add_user_button" onclick="closeAddUserForm()">
+                <input type="button" value="LÄGG TILL" id="add_user_button" class="add_user_button" onclick="addUser('<%=session[:user]%>')">
+            </div>
+        </div>
+
+        <div id="change_password_form">
+            <input type="password" name="pss" id="ss" placeholder="Nytt lösenord">
+            <input type="password" name="password" id="s" placeholder="Bekräfta nytt lösenord">
+            <input type="button" value="Lägg till" id="ss" class="add_user_button" onclick="addUser('<%=session[:user]%>')">
+            <input type="button" value="Avbryt" id="ss" class="add_user_button" onclick="addUser('<%=session[:user]%>')">
+        </div>
+
+        <table id="usertable"></table>
+        <script>
+            printAllUsers(<%= get_user_names%>, <%= get_user_levels%>, "<%=session[:user]%>")
+        </script>
+    <% end %>
 </div>

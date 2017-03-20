@@ -73,4 +73,41 @@ class App < Sinatra::Base
       redirect '/login'
     end
   end
+
+  get '/request-site-info' do
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    site_info = SiteText.first(:name_id => params["name_id"])
+    if site_info != nil
+      site_info.text
+    else
+      "Wrong id."
+    end
+  end
+
+  post '/save-site-text' do
+    if authorized?
+      site_info = SiteText.first(:name_id => params["name_id"])
+      if site_info.update(:text => params["text"])
+        p "Updated site text for " + params["name_id"]
+        "done"
+      else
+        p "Failed to update site text for " + params["name_id"]
+        site_info.errors.each do |e|
+          puts "Problem: " + e.to_s
+        end
+        "failed"
+      end
+    end
+  end
+
+  post '/update-text-editor' do
+    if authorized?
+      site_info = SiteText.first(:name_id => params["name_id"])
+      if site_info != nil
+        return htmlToText(site_info.text)
+      else
+        "Wrong id."
+      end
+    end
+  end
 end

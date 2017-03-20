@@ -1,5 +1,17 @@
 var isPort = false;
 
+var user_email = "";
+var user_theme = "1";
+var user_level = "1";
+var access_token = "";
+
+function createUser(m, t, l, a) {
+    user_email = m.toString();
+    user_theme = t.toString();
+    user_level = l.toString();
+    access_token = a.toString();
+}
+
 function area_tab_height() {
     var h = document.getElementById("nav_logo_div").offsetHeight;
     var h2 = document.getElementsByClassName("nav_item")[0].offsetHeight;
@@ -51,6 +63,16 @@ function openPage(event, area, tab_button_id, tab_content_id) {
     }
     document.getElementById(area).style.display = "flex";
     event.currentTarget.className += " active_button";
+
+    if (area == "area_omoss") {
+        open_editor_tab = "about";
+    } else if (area == "area_historia") {
+        open_editor_tab = "history";
+    } else if (area == "area_projekt") {
+        open_editor_tab = "project";
+    } else if (area == "area_kontakt") {
+        open_editor_tab = "contact";
+    }
 
     if (tab_button_id == "nav_item" && window.matchMedia("(max-device-width: 415px) and (orientation: portrait)").matches) {
         document.getElementById("nav").style.display = "none";

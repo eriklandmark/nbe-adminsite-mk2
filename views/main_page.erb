@@ -3,7 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <title>nBe Productions</title>
-
+        <script>
+            (function (w, d, s, g, js, fs) {
+                g = w.gapi || (w.gapi = {});
+                g.analytics = {
+                    q: [], ready: function (f) {
+                        this.q.push(f);
+                    }
+                };
+                js = d.createElement(s);
+                fs = d.getElementsByTagName(s)[0];
+                js.src = 'https://apis.google.com/js/platform.js';
+                fs.parentNode.insertBefore(js, fs);
+                js.onload = function () {
+                    g.load('analytics');
+                };
+            }(window, document, 'script'));
+        </script>
         <link rel="stylesheet" type="text/css" href="css/parts/errorbox.css">
         <link rel="stylesheet" type="text/css" href="css/main_page.css">
 		<link rel="icon" type="image/png" href="images/nbe_favicon.png">
@@ -38,7 +54,7 @@
                     <p>Filer</p>
                 </div>
                 <div class="nav_item" onclick="openPage(event, 'area_editor', 'nav_item', 'area')">
-                    <img src="icons/chatt_icon_white.svg" class="nav_picture">
+                    <img src="icons/editor_white.svg" class="nav_picture">
                     <p>Editor</p>
                 </div>
                 <div class="nav_item" onclick="openPage(event, 'area_user', 'nav_item', 'area')">
@@ -64,6 +80,13 @@
         </div>
     </body>
     <!-- Scripts -->
-    <script src="js/ErrorMsg.js"></script>
     <script src="js/main_page.js"></script>
+    <script src="js/ErrorMsg.js"></script>
+    <script src="js/GoogleAnalyticsAPI.js"></script>
+    <script src="js/AjaxCall.js"></script>
+    <script src="js/editor.js"></script>
+    <script src="js/user.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        createUser("<%=session[:user]%>", "<%=session[:theme]%>", "<%=session[:level]%>", "<%=session[:google_access_key]%>");
+    </script>
 </html>

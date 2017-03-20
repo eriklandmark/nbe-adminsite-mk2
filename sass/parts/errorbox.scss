@@ -54,6 +54,7 @@
     padding: 5px 30px 5px 30px;
     background-color: #9CB6D0;
     @include border-radius(30px);
+    outline: none;
   }
 }
 
@@ -108,6 +109,7 @@
     padding: 8px 35px 8px 35px;
     background-color: #9CB6D0;
     @include border-radius(30px);
+    outline: none;
   }
 }
 
@@ -162,6 +164,7 @@
     padding: 8px 35px 8px 35px;
     background-color: #9CB6D0;
     @include border-radius(30px);
+    outline: none;
   }
 }
 
