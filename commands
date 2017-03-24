@@ -1,0 +1,3 @@
+rerun --ignore "*.{slim,js,css,coffee,erb,scss}" "rackup --host 0.0.0.0"
+
+compass watch

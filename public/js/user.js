@@ -100,3 +100,7 @@ function closeAddUserForm() {
     document.getElementById("form_dimmer").style.display = "none";
     document.getElementById("add_user_form").style.display = "none";
 }
+
+function addUser() {
+    
+}

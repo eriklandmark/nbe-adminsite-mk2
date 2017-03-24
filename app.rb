@@ -7,7 +7,7 @@ class App < Sinatra::Base
 
   helpers do
     def has_level_2?
-      return authorized? && Users.first(:email => params["requesting_user"]).clearence_level == 2
+      return authorized? && params["requesting_user"] == session[:user] && Users.first(:email => params["requesting_user"]).clearence_level == 2
     end
 
     def authorized?
