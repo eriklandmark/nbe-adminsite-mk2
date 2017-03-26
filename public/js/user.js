@@ -6,9 +6,9 @@ function printAllUsers(user, lev, thisUser) {
     var users = user;
     var levels = lev;
 
-    var table = document.getElementById("usertable");
+    var table = document.getElementById("user_table");
 
-    table.innerHTML = "<tbody id='tBody'><tr> <td class='userTableNames'><b>Email</b></td> <td class='userTableLevels'><b>Level</b></td> <td class='userTableActions' style='text-align: center'><b>Ändra</b></td> </tr> </tbody>";
+    table.innerHTML = "<tbody id='tBody'><tr> <td class='users_table_names'><b>Email</b></td> <td class='users_table_levels'><b>Level</b></td> <td class='users_table_actions'><b>Ändra</b></td> </tr> </tbody>";
 
     for (var i = 0; i < users.length; i++) {
         var new_user = document.createElement('tr');
@@ -16,9 +16,9 @@ function printAllUsers(user, lev, thisUser) {
         var user_level = document.createElement("td");
         var user_action = document.createElement("td");
 
-        user_name.className = "userTableNames";
-        user_level.className = "userTableLevels";
-        user_action.className = "userTableActions";
+        user_name.className = "users_table_names";
+        user_level.className = "users_table_levels";
+        user_action.className = "users_table_actions";
 
         var name = document.createElement('p');
         name.className = "user_table_pg";
@@ -32,14 +32,14 @@ function printAllUsers(user, lev, thisUser) {
         var imgChgPass = document.createElement("img");
         chgPassAction.setAttribute("href", "javascript:void(0)");
         chgPassAction.setAttribute("onclick", "openPasswordBox('" + users[i] + "')");
-        imgChgPass.setAttribute("src", "/icons/chg_pass_icon.svg");
+        imgChgPass.setAttribute("src", "/icons/chg_pass_icon_white.svg");
         imgChgPass.className = "chg_pass_user_icon";
         chgPassAction.appendChild(imgChgPass);
 
         var deleteAction = document.createElement("a");
         var imgDelete = document.createElement("img");
         deleteAction.setAttribute("href", "javascript:void(0)");
-        imgDelete.setAttribute("src", "/icons/delete_icon.svg");
+        imgDelete.setAttribute("src", "/icons/delete_icon_white.svg");
         imgDelete.className = "delete_user_icon";
         deleteAction.setAttribute("onclick", "deleteUser('" + users[i] + "', ' " + thisUser + "')");
         deleteAction.appendChild(imgDelete);
@@ -71,7 +71,7 @@ function deleteUser(username, thisUser) {
 }
 
 function openPasswordBox(user) {
-    var data = new FormData();
+    /*var data = new FormData();
     data.append("user", user);
 
     var w = 300;
@@ -87,6 +87,17 @@ function openPasswordBox(user) {
     var top = ((height / 2) - (h / 2)) + dualScreenTop;
 
     window.open('', 'TheWindow', "width=" + w + ",height=" + h + ",top=" + top + ",left=" + left);
+    */
+    document.getElementById("form_dimmer").style.display = "flex";
+    document.getElementById("change_password_form").style.display = "flex";
+    document.getElementById("add_user_email_field").value = "";
+    document.getElementById("add_user_pass_field").value = "";
+    document.getElementById("change_password_form_title").innerHTML = "Ändra " + user + "'s lösenord";
+}
+
+function closePasswordBox() {
+    document.getElementById("form_dimmer").style.display = "none";
+    document.getElementById("change_password_form").style.display = "none";
 }
 
 function openAddUserForm() {

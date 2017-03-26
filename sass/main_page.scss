@@ -300,13 +300,32 @@
           }
         }
 
-        #divider {
+        .divider {
           width: 100%;
           max-height: 5px;
           height: 5px;
           background-color: rgba(0,0,0,0.3);
           margin: 20px 0 20px 0;
           @include border-radius(3px);
+        }
+
+        #add_new_user_button {
+          width: 260px;
+          border: none;
+          margin: 20px 5px 20px 5px;
+          padding: 8px 30px 8px 30px;
+          font-size: 1em;
+          font-weight: bold;
+          background-color: #9CB6D0;
+          color: black;
+          font-family: Roboto, sans-serif;
+          cursor: pointer;
+          outline: none;
+          @include border-radius(30px);
+
+          &:hover {
+            background-color: #69819b;
+          }
         }
 
         #form_dimmer {
@@ -322,7 +341,6 @@
 
         #add_user_form {
           position: fixed;
-          height: 220px;
           width: 300px;
           top: calc(50vh - (220px / 2));
           left: calc(50vw - (350px / 2));
@@ -373,6 +391,85 @@
             }
           }
         }
+
+        #change_password_form {
+          position: fixed;
+          width: 500px;
+          top: calc(50vh - (220px / 2));
+          left: calc(50vw - (500px / 2));
+          background-color: lightgreen;
+          z-index: 1001;
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          padding: 20px;
+          @include border-radius(20px);
+
+          h2 {
+            color: black;
+          }
+
+          input[type=email] {
+            margin-top: 20px;
+            border: none;
+            font-family: sans-serif;
+            padding: 10px;
+            font-size: 1em;
+            width: 230px;
+          }
+
+          input[type=password]{
+            margin-top: 15px;
+            border: none;
+            font-family: sans-serif;
+            padding: 10px;
+            font-size: 1em;
+            width: 230px;
+          }
+
+          input[type=button]{
+            border: none;
+            margin: 30px 5px 0 5px;
+            padding: 8px 30px 8px 30px;
+            font-size: 1em;
+            background-color: #9CB6D0;
+            color: black;
+            font-family: Roboto, sans-serif;
+            cursor: pointer;
+            outline: none;
+            @include border-radius(30px);
+
+            &:hover {
+              background-color: #69819b;
+            }
+          }
+        }
+
+        table {
+          width: 100%;
+          color: white;
+          font-family: Roboto, sans-serif;
+          .users_table_names {
+            width: 100%;
+          }
+
+          .users_table_levels {
+            text-align: center;
+          }
+
+          .users_table_actions {
+            width: 120px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .chg_pass_user_icon, .delete_user_icon {
+            width: 36px;
+            margin: 0 5px 0 5px;
+          }
+        }
       }
     }
   }
@@ -402,11 +499,6 @@
 
     #nav {
       display: flex;
-    }
-
-    MediaQueryList: {
-      matches: true;
-      media: "(min-width: 480px)";
     }
 
     nav {

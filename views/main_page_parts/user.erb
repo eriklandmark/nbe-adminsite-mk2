@@ -3,19 +3,18 @@
 
     <form>
         <p>Skriv in nytt lösenord:</p><br>
-        <input type="password" placeholder="Befintligt lösenord"/> <br>
-        <input type="password" placeholder="Nytt lösenord"/> <br>
-        <input type="password" placeholder="Bekräfta nytt lösenord"/><br>
+        <input type="password" name="current_password" placeholder="Befintligt lösenord"/> <br>
+        <input type="password" name="new_password_field_1" placeholder="Nytt lösenord"/> <br>
+        <input type="password" name="new_password_field_2" placeholder="Bekräfta nytt lösenord"/><br>
         <input type="button" value="SPARA" onclick="msg('Ditt lösenord har ändrats!')"/>
     </form>
 
-    <div id="divider"></div>
+    <div class="divider"></div>
 
     <% if session[:level] == 2 %>
         <h2 class="contentTitle">Användarhanteraren</h2>
 
-        <h3 class="under_title">Lägg till användare</h3>
-        <input type="button" id="add_new_user_button" onclick="openAddUserForm()">
+        <input type="button" id="add_new_user_button" value="SKAPA NY ANVÄNDARE" onclick="openAddUserForm()">
 
         <div id="form_dimmer"></div>
 
@@ -30,13 +29,16 @@
         </div>
 
         <div id="change_password_form">
-            <input type="password" name="pss" id="ss" placeholder="Nytt lösenord">
-            <input type="password" name="password" id="s" placeholder="Bekräfta nytt lösenord">
-            <input type="button" value="Lägg till" id="ss" class="add_user_button" onclick="addUser('<%=session[:user]%>')">
-            <input type="button" value="Avbryt" id="ss" class="add_user_button" onclick="addUser('<%=session[:user]%>')">
+            <h2 id="change_password_form_title"></h2>
+            <input type="password" name="field_1" id="change_password_field_1" placeholder="Nytt lösenord">
+            <input type="password" name="field_2" id="change_password_field_2" placeholder="Bekräfta nytt lösenord">
+            <div>
+                <input type="button" value="AVBRYT" onclick="closePasswordBox()">
+                <input type="button" value="ÄNDRA LÖSENORD" onclick="">
+            </div>
         </div>
 
-        <table id="usertable"></table>
+        <table id="user_table"></table>
         <script>
             printAllUsers(<%= get_user_names%>, <%= get_user_levels%>, "<%=session[:user]%>")
         </script>

@@ -23,6 +23,16 @@
         <link rel="stylesheet" type="text/css" href="css/parts/errorbox.css">
         <link rel="stylesheet" type="text/css" href="css/main_page.css">
 		<link rel="icon" type="image/png" href="images/nbe_favicon.png">
+
+        <script src="js/main_page.js"></script>
+        <script src="js/ErrorMsg.js"></script>
+        <script src="js/GoogleAnalyticsAPI.js"></script>
+        <script src="js/AjaxCall.js"></script>
+        <script src="js/editor.js"></script>
+        <script src="js/user.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            createUser("<%=session[:user]%>", "<%=session[:theme]%>", "<%=session[:level]%>", "<%=session[:google_access_key]%>");
+        </script>
     </head>
     <body>
         <div id="error_dimmer"><div id="error_box"><p id="error_text">Error</p><input type="button" id="error_button" value="OK" onclick="document.getElementById('error_dimmer').style.display = 'none'"></div></div>
@@ -79,14 +89,4 @@
             <%=erb :"main_page_parts/user"%>
         </div>
     </body>
-    <!-- Scripts -->
-    <script src="js/main_page.js"></script>
-    <script src="js/ErrorMsg.js"></script>
-    <script src="js/GoogleAnalyticsAPI.js"></script>
-    <script src="js/AjaxCall.js"></script>
-    <script src="js/editor.js"></script>
-    <script src="js/user.js"></script>
-    <script type="text/javascript" charset="utf-8">
-        createUser("<%=session[:user]%>", "<%=session[:theme]%>", "<%=session[:level]%>", "<%=session[:google_access_key]%>");
-    </script>
 </html>
